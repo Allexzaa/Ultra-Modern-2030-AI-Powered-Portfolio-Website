@@ -1,8 +1,8 @@
-<p align="center">
+<table align="center"><tr><td align="center" bgcolor="#000000">
   <img src="images/ai_human_future_4.png" alt="Portfolio Logo" width="220" />
-</p>
+</td></tr></table>
 
-<h1 align="center">Horizontal Sliding Portfolio — Hover Detail Template</h1>
+<h1 align="center">Horizontal Sliding Animation — Hover Detail Template</h1>
 
 <p align="center">
   A single-page portfolio component built with vanilla HTML, CSS, and JavaScript. No frameworks. No build step.
