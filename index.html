@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover Detail Project Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <aside class="rail rail-left"></aside>
+    <aside class="rail rail-right"></aside>
+
+    <main class="shell">
+      <section class="gallery-wrap" aria-label="Project gallery">
+        <div class="gallery-heading">
+          <strong>Hover a project</strong>
+        </div>
+
+        <div class="indicator" aria-hidden="true"></div>
+        <div class="gallery" id="gallery">
+          <button class="gallery-item" type="button" data-project="migration">
+            <img src="./images/ai_human_future_1.png" alt="" />
+            <span class="item-label">
+              <small>AWS / Database</small>
+              <strong>Automated Data Migration</strong>
+            </span>
+          </button>
+          <button class="gallery-item" type="button" data-project="microservices">
+            <img src="./images/tech_philosophy_1.png" alt="" />
+            <span class="item-label">
+              <small>AWS / Serverless</small>
+              <strong>Secure Microservices</strong>
+            </span>
+          </button>
+          <button class="gallery-item" type="button" data-project="scheduling">
+            <img src="./images/ai_human_future_2.png" alt="" />
+            <span class="item-label">
+              <small>AWS / Automation</small>
+              <strong>Scheduling App</strong>
+            </span>
+          </button>
+          <button class="gallery-item" type="button" data-project="moderation">
+            <img src="./images/tech_philosophy_2.png" alt="" />
+            <span class="item-label">
+              <small>AWS / AI</small>
+              <strong>AI Moderation Agent</strong>
+            </span>
+          </button>
+          <button class="gallery-item" type="button" data-project="orders">
+            <img src="./images/philosophy_v3_3.png" alt="" />
+            <span class="item-label">
+              <small>AWS / Workflow</small>
+              <strong>Order Pipeline</strong>
+            </span>
+          </button>
+          <button class="gallery-item" type="button" data-project="incident">
+            <img src="./images/tech_philosophy_4.png" alt="" />
+            <span class="item-label">
+              <small>AWS / Security</small>
+              <strong>Incident Response</strong>
+            </span>
+          </button>
+          <button class="gallery-item" type="button" data-project="support">
+            <img src="./images/ai_human_future_5.png" alt="" />
+            <span class="item-label">
+              <small>AWS / GenAI</small>
+              <strong>AI Customer Support</strong>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <article class="project-popup" id="projectPopup" aria-live="polite">
+        <img class="popup-bg" id="popupBg" src="./images/ai_human_future_1.png" alt="" />
+        <div class="popup-scrim"></div>
+
+        <div class="popup-content">
+
+          <div class="popup-header">
+            <span class="popup-tag" id="popupTag">AWS / Database</span>
+            <div class="ptoggle-bar">
+              <button class="ptoggle-btn active" data-view="recruiter">Recruiter Brief</button>
+              <button class="ptoggle-btn" data-view="technical">Technical Deep Dive</button>
+              <div class="ptoggle-pill" id="ptogglePill"></div>
+            </div>
+          </div>
+
+          <!-- Recruiter Brief -->
+          <div class="popup-view popup-view--recruiter active" id="popupViewRecruiter">
+            <div class="rec-main">
+              <h1 id="popupTitle">Automated Data Migration</h1>
+              <p class="summary" id="popupSummary"></p>
+
+              <div class="impact-row" id="impactRow"></div>
+
+              <div class="rec-section">
+                <span class="rec-label">What I Did</span>
+                <ul class="rec-list" id="popupWhatIDid"></ul>
+              </div>
+
+              <div class="rec-section">
+                <span class="rec-label">Role & Stack</span>
+                <div class="quick-grid">
+                  <div><span>Role</span><strong id="popupRole"></strong></div>
+                  <div><span>Focus</span><strong id="popupFocus"></strong></div>
+                  <div><span>Stack</span><strong id="popupStackShort"></strong></div>
+                </div>
+              </div>
+
+              <div class="actions">
+                <a id="caseStudyLink" href="#">Case Study</a>
+                <a id="githubLink" href="#">GitHub</a>
+              </div>
+            </div>
+
+            <aside class="rec-sidebar">
+              <span class="rec-label">Skills</span>
+              <div class="rec-skill-list" id="popupSkills"></div>
+            </aside>
+          </div>
+
+          <!-- Technical Deep Dive -->
+          <div class="popup-view popup-view--technical" id="popupViewTechnical">
+
+            <div class="t-section">
+              <span class="t-label">01 — Setup</span>
+              <p class="t-body" id="popupProblem"></p>
+              <div class="t-fact-grid" id="popupSetupFacts"></div>
+            </div>
+
+            <div class="t-section">
+              <span class="t-label">02 — Architecture</span>
+              <p class="t-sub">Click any service node for details.</p>
+              <div class="arch-wrap">
+                <div class="wireframe" id="wireframe"></div>
+                <div class="node-card" id="nodeCard">
+                  <div class="node-card__head">
+                    <div>
+                      <span class="node-card__tag" id="ncTag"></span>
+                      <strong class="node-card__title" id="ncTitle"></strong>
+                    </div>
+                    <button class="node-card__close" id="ncClose">✕</button>
+                  </div>
+                  <p class="node-card__role" id="ncRole"></p>
+                  <div class="node-card__facts" id="ncFacts"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-section">
+              <span class="t-label">03 — Key Decisions</span>
+              <p class="t-sub">Engineering choices with tradeoffs — tap to expand.</p>
+              <div class="t-decisions" id="popupDecisions"></div>
+            </div>
+
+            <div class="t-section t-section--last">
+              <span class="t-label">04 — Outcome</span>
+              <div class="t-outcome-stats" id="popupOutcomeStats"></div>
+              <div class="t-outcome-cols">
+                <div class="t-oc">
+                  <span class="toc-label">What I Learned</span>
+                  <ul class="t-notes" id="popupLearned"></ul>
+                </div>
+                <div class="t-oc">
+                  <span class="toc-label">What I'd Do Differently</span>
+                  <p class="toc-text" id="popupDifferently"></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </article>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
