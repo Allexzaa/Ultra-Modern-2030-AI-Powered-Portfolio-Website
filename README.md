@@ -1,6 +1,6 @@
-<table align="center"><tr><td align="center" bgcolor="#000000">
-  <img src="images/ai_human_future_4.png" alt="Portfolio Logo" width="220" />
-</td></tr></table>
+<p align="center">
+  <img src="images/logo_banner.png" alt="Portfolio Logo" width="600" />
+</p>
 
 <h1 align="center">Horizontal Sliding Animation — Hover Detail Template</h1>
 
