@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/logo_banner.png" alt="Portfolio Logo" width="600" />
+  <img src="images/logo_banner.png" alt="Portfolio Logo" width="1000" />
 </p>
 
 <h1 align="center">Horizontal Sliding Animation — Hover Detail Template</h1>
