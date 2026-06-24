@@ -5,41 +5,31 @@
 <h1 align="center">Horizontal Sliding Portfolio — Hover Detail Template</h1>
 
 <p align="center">
-  A single-page portfolio component for cloud engineers. Hover a project card to reveal a full-detail panel with a recruiter brief and a technical deep dive.
+  A single-page portfolio component built with vanilla HTML, CSS, and JavaScript. No frameworks. No build step.
 </p>
 
 ---
 
-## Overview
+## Architecture
 
-Seven AWS cloud engineering projects presented in a horizontally scrolling gallery. Each card opens a split-view panel:
+The component is split into two panels rendered inside a single HTML document:
 
-- **Recruiter Brief** — summary, impact metrics, what I did, role & stack, and an animated floating skills sidebar
-- **Technical Deep Dive** — problem setup, interactive architecture flow diagram with clickable service nodes, key decisions accordion with tradeoff analysis, and outcome stats
+- **Gallery** — horizontally scrolling row of project cards with a custom cursor indicator driven by `mousemove`
+- **Detail panel** — slides in on hover/click and hosts two independently rendered views toggled by a pill switcher
 
-No frameworks. No build step. Plain HTML, CSS, and vanilla JS.
+The detail panel has two views:
 
-## Projects
+- **Brief view** — impact metrics, bullet list, quick-grid role/stack summary, and a floating skills sidebar animated with a collision-resolved `requestAnimationFrame` loop
+- **Technical view** — a dynamically built architecture flow diagram with clickable service nodes that open a detail card, a key decisions accordion with height-animated expand/collapse, and outcome stats
 
-| Project | Stack |
-|---|---|
-| Automated Data Migration | AWS DMS · Aurora MySQL · CloudWatch · Secrets Manager |
-| Secure Microservices | API Gateway · Lambda · Cognito · DynamoDB |
-| Scheduling App | S3 Events · Lambda · DynamoDB · Telegram API |
-| AI Moderation Agent | Rekognition · Comprehend · Lambda · DynamoDB |
-| Order Pipeline | Step Functions · Lambda · SNS · DynamoDB |
-| Incident Response | CloudWatch Events · Step Functions · Lambda · SNS |
-| AI Customer Support | Bedrock · Lambda · DynamoDB · API Gateway |
+All content is driven by a single `projects` data object in `script.js`. No templating engine — DOM nodes are built and injected at runtime.
 
-## Features
+## Tech Stack
 
-- Horizontal scroll gallery with a custom cursor indicator
-- Hover or click a card to open the detail panel
-- Toggle between Recruiter Brief and Technical Deep Dive views
-- Architecture flow diagram — click any service node for specs and role detail
-- Key Decisions accordion with tradeoff explanations
-- Floating, collision-resolved skill tag animation
-- Outcome stats mirrored in the Technical view
+- HTML5 · CSS3 (custom properties, grid, flexbox, CSS transitions)
+- Vanilla JavaScript (ES2020) — no dependencies
+- Google Fonts: Space Grotesk · JetBrains Mono · Syne
+- Material Icons (icon font)
 
 ## Usage
 
@@ -51,15 +41,6 @@ npx serve .
 python3 -m http.server 8080
 ```
 
-No dependencies to install.
-
 ## Customisation
 
-All project data lives in the `projects` object at the top of `script.js`. Each entry controls every field rendered in both views — title, summary, impact metrics, architecture nodes, decisions, and outcome notes. Swap the image paths in `images/` and update the data to make it your own.
-
-## Stack
-
-- HTML5 · CSS3 (custom properties, grid, flexbox)
-- Vanilla JavaScript (ES2020)
-- Google Fonts: Space Grotesk · JetBrains Mono · Syne
-- Material Icons
+All content is declared in the `projects` object at the top of `script.js`. Each key maps to one gallery card and controls every field rendered in both views. Swap the images in `images/` and update the data object to populate your own content.
